@@ -1,0 +1,3 @@
+Protocol Fitness v4
+Versão: 20260724-1
+Reinício semanal automático toda segunda-feira; histórico preservado.

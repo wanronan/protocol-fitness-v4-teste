@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">PUSH</title><desc id="desc">Peito, ombros e tríceps.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#202732"/><stop offset=".6" stop-color="#11161d"/><stop offset="1" stop-color="#090c11"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#ff7a00" stop-opacity=".38"/><stop offset="1" stop-color="#ff7a00" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#fff" stroke-opacity=".035"/></pattern>
+  </defs>
+  <rect width="1100" height="520" rx="36" fill="url(#bg)"/>
+  <rect width="1100" height="520" rx="36" fill="url(#grid)"/>
+  <circle cx="830" cy="225" r="240" fill="url(#glow)"/>
+  <path d="M0 420C210 350 390 470 610 388s340-42 490-120V520H0z" fill="#ff7a00" fill-opacity=".045"/>
+  <g transform="translate(62 80)">
+    <text x="0" y="0" fill="#ffb14a" font-family="Inter,Arial" font-size="20" font-weight="800" letter-spacing="5">VOLUME • PUSH / PULL</text>
+    <text x="0" y="88" fill="#f6f7f9" font-family="Sora,Arial" font-size="68" font-weight="800">PUSH</text>
+    <text x="0" y="137" fill="#9aa4b2" font-family="Inter,Arial" font-size="24">Peito, ombros e tríceps.</text>
+    <rect x="0" y="190" width="84" height="7" rx="4" fill="#ff7a00"/>
+  </g>
+  
+          <g transform="translate(680 70)" fill="none" stroke-linecap="round">
+            <path d="M70 170h290M118 170v148M312 170v148" stroke="#f5f7fa" stroke-opacity=".2" stroke-width="11"/>
+            <path d="M120 125h190M105 125l-35 0M325 125h35" stroke="#ff9d2e" stroke-width="13"/>
+            <circle cx="68" cy="125" r="34" stroke="#ff7a00" stroke-width="14"/>
+            <circle cx="362" cy="125" r="34" stroke="#ff7a00" stroke-width="14"/>
+          </g>
+</svg>

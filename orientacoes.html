@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0D12">
+  <title>Orientações • Protocol Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260724-1">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="back-button" href="index.html" aria-label="Voltar">‹</a>
+      <div class="page-brand">PROTOCOL FITNESS</div>
+      <span class="icon-button ghost">i</span>
+    </header>
+
+    <main class="page rules-page">
+      <section class="rules-hero">
+        <span class="eyebrow">TREINE FORTE. TREINE INTEIRO.</span>
+        <h1>Técnica antes do ego.</h1>
+        <p>As regras abaixo fazem parte do programa de oito semanas.</p>
+      </section>
+
+      <section class="rule-card">
+        <div class="rule-card-icon">01</div>
+        <div><span class="eyebrow">EXECUÇÃO</span><h2>Regras do treino</h2><ul id="executionRules"></ul></div>
+      </section>
+
+      <section class="rule-card warning">
+        <div class="rule-card-icon">!</div>
+        <div><span class="eyebrow">SEGURANÇA</span><h2>Cuidados com a coluna</h2><ul id="spineRules"></ul></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div><span class="eyebrow">CICLO</span><h2>8 semanas de progressão</h2></div>
+        </div>
+        <div class="cycle-list" id="cycleList"></div>
+      </section>
+
+      <section class="medical-note">
+        Material educativo. Dor persistente, formigamento ou limitação funcional exigem avaliação profissional.
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <a class="nav-item" href="index.html"><span>⌂</span><small>Início</small></a>
+      <a class="nav-item" href="index.html#weekTitle"><span>▦</span><small>Treinos</small></a>
+      <a class="nav-item" href="progresso.html"><span>↗</span><small>Progresso</small></a>
+      <a class="nav-item active" href="orientacoes.html"><span>◎</span><small>Orientações</small></a>
+    </nav>
+  </div>
+
+  <script src="js/treino-data.js?v=20260724-1"></script>
+  <script>
+    const data = window.TREINO_DATA.orientacoes;
+    const fillList = (id, items) => {
+      document.getElementById(id).innerHTML = items.map(item => `<li>${item}</li>`).join('');
+    };
+    fillList('executionRules', data.execucao);
+    fillList('spineRules', data.coluna);
+    document.getElementById('cycleList').innerHTML = data.ciclo.map((item, index) => `
+      <article class="cycle-item">
+        <span>${String(index + 1).padStart(2, '0')}</span>
+        <div><strong>${item.periodo}</strong><p>${item.conduta}</p></div>
+      </article>
+    `).join('');
+  </script>
+</body>
+</html>
