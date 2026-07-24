@@ -1,3 +1,3 @@
-Protocol Fitness v4
-Versão: 20260724-1
-Reinício semanal automático toda segunda-feira; histórico preservado.
+Protocol Fitness V6
+Versão: 20260725-1
+Inclui recursos V5 + V6: progressão sugerida, cronômetro fixo, resumo, recordes, calendário, gráficos, substituições, backup e CSV.

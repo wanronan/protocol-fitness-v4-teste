@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0A0D12">
   <title>Treino • Protocol Fitness</title>
+  <link rel="manifest" href="manifest.json?v=20260725-1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260724-1">
+  <link rel="stylesheet" href="css/style.css?v=20260725-1">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <a class="back-button" href="index.html" aria-label="Voltar">‹</a>
-      
       <a class="brand brand-compact" href="index.html" aria-label="Página inicial">
         <img class="brand-logo" src="assets/icons/protocol-fitness-logo.png" alt="Protocol Fitness">
         <span><strong>PROTOCOL FITNESS</strong><small>TREINO E EVOLUÇÃO</small></span>
@@ -22,18 +22,28 @@
       <a class="icon-button" href="orientacoes.html" aria-label="Orientações">i</a>
     </header>
 
-    <main class="page workout-page">
+    <main class="page workout-page v56-workout-page">
       <section id="workoutHeader"></section>
 
-      <section class="workout-progress-card compact-progress">
+      <section class="workout-progress-card compact-progress v56-progress-card">
         <div class="progress-copy">
           <div><strong id="progressLabel">0 de 0 exercícios</strong><span>marcados</span></div>
           <strong id="progressPercent">0%</strong>
         </div>
         <div class="progress-track"><span id="progressBar"></span></div>
+        <div class="session-strip">
+          <span><b id="sessionClock">00:00</b> de treino</span>
+          <span><b id="sessionVolume">0 kg</b> de volume</span>
+          <span><b id="sessionPrs">0</b> recordes</span>
+        </div>
       </section>
 
-      <section class="simple-exercise-list" id="exerciseList"></section>
+      <section class="workout-coach-card" id="coachCard">
+        <div class="coach-icon">↗</div>
+        <div><span class="eyebrow">PROGRESSÃO INTELIGENTE</span><h2>O app usa a última carga para sugerir o próximo passo.</h2><p>Registre carga, repetições e RIR. A sugestão aparece automaticamente no exercício.</p></div>
+      </section>
+
+      <section class="simple-exercise-list v56-exercise-list" id="exerciseList"></section>
 
       <button class="finish-button" id="finishWorkout">
         Finalizar treino
@@ -49,8 +59,60 @@
     </nav>
   </div>
 
-  <script src="js/treino-data.js?v=20260724-1"></script>
-  <script src="js/storage.js?v=20260724-1"></script>
-  <script src="js/treino.js?v=20260724-1"></script>
+  <aside class="rest-dock" id="restDock" hidden aria-live="polite">
+    <button class="rest-close" id="restClose" aria-label="Fechar cronômetro">×</button>
+    <div class="rest-copy"><span>DESCANSO</span><strong id="restTime">01:30</strong><small id="restExercise">Próxima série</small></div>
+    <div class="rest-actions">
+      <button id="restMinus">−15s</button>
+      <button class="rest-main" id="restPause">Pausar</button>
+      <button id="restPlus">+15s</button>
+    </div>
+  </aside>
+
+  <div class="modal-shell" id="substitutionModal" hidden>
+    <div class="modal-backdrop" data-close-modal="substitutionModal"></div>
+    <section class="app-modal compact-modal" role="dialog" aria-modal="true" aria-labelledby="substitutionTitle">
+      <button class="modal-x" data-close-modal="substitutionModal">×</button>
+      <span class="eyebrow">SUBSTITUIÇÃO</span>
+      <h2 id="substitutionTitle">Trocar exercício</h2>
+      <p id="substitutionOriginal" class="modal-lead"></p>
+      <label class="field-label"><span>Novo exercício</span><select id="substitutionSelect"></select></label>
+      <div class="scope-options">
+        <label><input type="radio" name="subScope" value="today" checked><span>Somente nesta semana</span></label>
+        <label><input type="radio" name="subScope" value="permanent"><span>Usar nos próximos treinos</span></label>
+      </div>
+      <div class="modal-actions"><button class="secondary-button" id="restoreOriginal">Restaurar original</button><button class="primary-button" id="saveSubstitution">Aplicar troca</button></div>
+    </section>
+  </div>
+
+  <div class="modal-shell" id="finishModal" hidden>
+    <div class="modal-backdrop" data-close-modal="finishModal"></div>
+    <section class="app-modal" role="dialog" aria-modal="true" aria-labelledby="finishTitle">
+      <button class="modal-x" data-close-modal="finishModal">×</button>
+      <span class="eyebrow">ENCERRAR SESSÃO</span>
+      <h2 id="finishTitle">Como foi o treino?</h2>
+      <p class="modal-lead" id="finishWarning"></p>
+      <label class="field-label"><span>Esforço da sessão: <b id="rpeValue">8</b>/10</span><input id="sessionRpe" type="range" min="1" max="10" value="8"></label>
+      <label class="field-label"><span>Observação opcional</span><textarea id="sessionNote" rows="3" placeholder="Ex.: carga boa, pouco sono, dor, equipamento ocupado..."></textarea></label>
+      <div class="modal-actions"><button class="secondary-button" data-close-modal="finishModal">Continuar treino</button><button class="primary-button" id="saveFinishedWorkout">Salvar treino</button></div>
+    </section>
+  </div>
+
+  <div class="modal-shell" id="summaryModal" hidden>
+    <div class="modal-backdrop"></div>
+    <section class="app-modal summary-modal" role="dialog" aria-modal="true" aria-labelledby="summaryTitle">
+      <span class="summary-burst">✓</span>
+      <span class="eyebrow">TREINO SALVO</span>
+      <h2 id="summaryTitle">Sessão concluída</h2>
+      <p class="modal-lead" id="summarySubtitle"></p>
+      <div class="summary-grid" id="summaryGrid"></div>
+      <div class="summary-highlights" id="summaryHighlights"></div>
+      <div class="modal-actions three-actions"><button class="secondary-button" id="shareSummary">Compartilhar</button><a class="secondary-button" href="progresso.html">Ver evolução</a><a class="primary-button" href="index.html">Concluir</a></div>
+    </section>
+  </div>
+
+  <script src="js/treino-data.js?v=20260725-1"></script>
+  <script src="js/storage.js?v=20260725-1"></script>
+  <script src="js/treino.js?v=20260725-1"></script>
 </body>
 </html>

@@ -5,53 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0A0D12">
   <title>Evolução • Protocol Fitness</title>
+  <link rel="manifest" href="manifest.json?v=20260725-1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260724-1">
+  <link rel="stylesheet" href="css/style.css?v=20260725-1">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <a class="back-button" href="index.html" aria-label="Voltar">‹</a>
       <div class="page-brand">PROTOCOL FITNESS</div>
-      <button class="icon-button" id="resetData" aria-label="Limpar dados">↻</button>
+      <button class="icon-button" id="refreshPage" aria-label="Atualizar">↻</button>
     </header>
 
-    <main class="page progress-page">
+    <main class="page progress-page v56-progress-page">
       <section class="progress-hero">
-        <span class="eyebrow">CONSISTÊNCIA</span>
-        <h1>O que é medido, <span>evolui.</span></h1>
-        <p>As séries concluídas e as cargas ficam salvas neste navegador.</p>
+        <span class="eyebrow">EVOLUÇÃO COMPLETA</span>
+        <h1>Dados que mostram <span>força.</span></h1>
+        <p>Cargas, volume, frequência, recordes e histórico salvos neste navegador.</p>
       </section>
 
-      <section class="metric-grid" id="metricGrid"></section>
+      <section class="metric-grid v56-metric-grid" id="metricGrid"></section>
 
       <section class="section-block">
-        <div class="section-heading">
-          <div><span class="eyebrow">SEMANA ATUAL</span><h2>Conclusão por treino</h2></div>
-        </div>
+        <div class="section-heading"><div><span class="eyebrow">SEMANA ATUAL</span><h2>Conclusão por treino</h2></div></div>
         <div class="chart-card" id="weekChart"></div>
       </section>
 
+      <section class="analytics-grid">
+        <article class="analytics-card calendar-card">
+          <div class="analytics-head">
+            <div><span class="eyebrow">FREQUÊNCIA</span><h2>Calendário de treinos</h2></div>
+            <div class="calendar-controls"><button id="prevMonth" aria-label="Mês anterior">‹</button><strong id="calendarLabel"></strong><button id="nextMonth" aria-label="Próximo mês">›</button></div>
+          </div>
+          <div class="calendar-weekdays"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
+          <div class="training-calendar" id="trainingCalendar"></div>
+          <div class="calendar-legend"><span><i class="done"></i> Treino concluído</span><span><i class="today"></i> Hoje</span></div>
+        </article>
+
+        <article class="analytics-card exercise-chart-card">
+          <div class="analytics-head stacked-mobile">
+            <div><span class="eyebrow">PROGRESSÃO</span><h2>Carga por exercício</h2></div>
+            <select id="exerciseSelect" aria-label="Escolher exercício"></select>
+          </div>
+          <div class="line-chart" id="exerciseChart"></div>
+          <div class="chart-summary" id="exerciseSummary"></div>
+        </article>
+      </section>
+
       <section class="section-block">
-        <div class="section-heading">
-          <div><span class="eyebrow">HISTÓRICO</span><h2>Últimas sessões</h2></div>
+        <div class="section-heading"><div><span class="eyebrow">VOLUME SEMANAL</span><h2>Distribuição por grupo muscular</h2></div><span class="date-pill" id="volumeWeekLabel"></span></div>
+        <div class="analytics-card muscle-volume-card" id="muscleVolumeChart"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading"><div><span class="eyebrow">HISTÓRICO</span><h2>Últimas sessões</h2></div><button class="text-link button-link" id="toggleHistory">Ver todas</button></div>
+        <div class="history-list v56-history-list" id="historyList"></div>
+      </section>
+
+      <section class="section-block" id="dataTools">
+        <div class="section-heading"><div><span class="eyebrow">FERRAMENTAS</span><h2>Backup e exportação</h2></div></div>
+        <div class="data-tools-grid">
+          <article class="data-tool-card"><span>01</span><h3>Backup completo</h3><p>Salva histórico, cargas, substituições e preferências em um arquivo JSON.</p><button class="primary-button" id="exportBackup">Baixar backup</button></article>
+          <article class="data-tool-card"><span>02</span><h3>Restaurar dados</h3><p>Importa um backup criado pelo próprio Protocol Fitness.</p><button class="secondary-button" id="importBackup">Escolher backup</button><input id="backupFile" type="file" accept="application/json,.json" hidden></article>
+          <article class="data-tool-card"><span>03</span><h3>Exportar CSV</h3><p>Gera uma planilha com todas as sessões e exercícios registrados.</p><button class="secondary-button" id="exportCsv">Baixar CSV</button></article>
+          <article class="data-tool-card danger-tool"><span>04</span><h3>Limpar dados</h3><p>Apaga os registros deste navegador. Faça backup antes.</p><button class="danger-button" id="resetData">Apagar tudo</button></article>
         </div>
-        <div class="history-list" id="historyList"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading"><div><span class="eyebrow">PREFERÊNCIAS</span><h2>Ajustes do treino</h2></div></div>
+        <form class="settings-card" id="settingsForm">
+          <label><span>Aumento sugerido de carga</span><div class="unit-input"><input id="progressionPercent" type="number" min="0.5" max="20" step="0.5"><b>%</b></div></label>
+          <label class="switch-row"><span>Som do cronômetro</span><input id="timerSound" type="checkbox"><i></i></label>
+          <button class="primary-button" type="submit">Salvar ajustes</button>
+        </form>
       </section>
     </main>
 
     <nav class="bottom-nav" aria-label="Navegação principal">
       <a class="nav-item" href="index.html"><span>⌂</span><small>Início</small></a>
       <a class="nav-item" href="index.html#weekTitle"><span>▦</span><small>Treinos</small></a>
-      <a class="nav-item active" href="progresso.html"><span>↗</span><small>Progresso</small></a>
-      <a class="nav-item" href="orientacoes.html"><span>◎</span><small>Orientações</small></a>
+      <a class="nav-item active" href="progresso.html"><span>↗</span><small>Evolução</small></a>
+      <a class="nav-item" href="orientacoes.html"><span>◎</span><small>Regras</small></a>
     </nav>
   </div>
 
-  <script src="js/treino-data.js?v=20260724-1"></script>
-  <script src="js/storage.js?v=20260724-1"></script>
-  <script src="js/progresso.js?v=20260724-1"></script>
+  <script src="js/treino-data.js?v=20260725-1"></script>
+  <script src="js/storage.js?v=20260725-1"></script>
+  <script src="js/progresso.js?v=20260725-1"></script>
 </body>
 </html>
