@@ -25,27 +25,46 @@ const getItem = (exerciseId) => state.sets?.[exerciseId]?.["1"] || {};
 
 const formatSeries = ex => `${ex.series}x${ex.repeticoes}`;
 
+const exerciseImages = {
+  'supino-inclinado': 'assets/exercises/supino-inclinado.png',
+  'peck-deck-superior': 'assets/exercises/peck-deck-superior.png',
+  'supino-reto': 'assets/exercises/supino-reto.png',
+  'crucifixo-crossover': 'assets/exercises/crossover-polia.png'
+};
+
+const getExerciseImage = (exercise) => exerciseImages[exercise.id] || day.imagem;
+
 const renderExercises = () => {
   document.getElementById('exerciseList').innerHTML = day.exercicios.map((exercise) => {
     const saved = getItem(exercise.id);
     return `
-      <article class="simple-exercise-card ${saved.done ? 'done' : ''}">
-        <div class="simple-ex-top">
-          <div>
-            <h2>${exercise.nome}</h2>
-            <p>${formatSeries(exercise)}</p>
+      <article class="premium-exercise-card ${saved.done ? 'done' : ''}">
+        <div class="exercise-art">
+          <img src="${getExerciseImage(exercise)}" alt="Ilustração de ${exercise.nome}" loading="lazy">
+        </div>
+
+        <div class="premium-ex-content">
+          <h2>${exercise.nome}</h2>
+          <span class="series-label">SÉRIES × REPETIÇÕES</span>
+          <div class="series-display" aria-label="${exercise.series} séries de ${exercise.repeticoes} repetições">
+            <strong>${exercise.series}</strong><span>×</span><b>${exercise.repeticoes}</b>
           </div>
+        </div>
+
+        <div class="premium-ex-actions">
           <button class="exercise-check ${saved.done ? 'done' : ''}"
             data-action="check" data-exercise="${exercise.id}"
             aria-label="Marcar ${exercise.nome} como feito">${saved.done ? '✓' : ''}</button>
-        </div>
 
-        <div class="simple-ex-bottom">
-          <label class="simple-weight-wrap">
-            <input inputmode="decimal" type="number" min="0" step="0.5"
-              aria-label="Peso do exercício ${exercise.nome}"
-              data-field="weight" data-exercise="${exercise.id}"
-              value="${saved.weight ?? ''}" placeholder="Carga em kg">
+          <label class="compact-weight-wrap">
+            <span>Carga kg</span>
+            <div class="compact-weight-field">
+              <input inputmode="decimal" type="number" min="0" step="0.5"
+                aria-label="Peso do exercício ${exercise.nome}"
+                data-field="weight" data-exercise="${exercise.id}"
+                value="${saved.weight ?? ''}" placeholder="0">
+              <em>kg</em>
+            </div>
           </label>
         </div>
       </article>`;
@@ -87,7 +106,7 @@ document.getElementById('exerciseList').addEventListener('click', event => {
   });
   state = WorkoutStorage.getWorkout(day.id);
 
-  const card = button.closest('.simple-exercise-card');
+  const card = button.closest('.premium-exercise-card');
   card.classList.toggle('done', nowDone);
   button.classList.toggle('done', nowDone);
   button.textContent = nowDone ? '✓' : '';
