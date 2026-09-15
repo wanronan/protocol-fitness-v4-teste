@@ -1,3 +1,2 @@
-Protocol Fitness V6
-Versão: 20260725-1
-Inclui recursos V5 + V6: progressão sugerida, cronômetro fixo, resumo, recordes, calendário, gráficos, substituições, backup e CSV.
+Protocol Fitness V4 Teste — Treino Márcio revisado Setembro/2026
+Cache: protocol-fitness-v4-marcio-setembro-2026

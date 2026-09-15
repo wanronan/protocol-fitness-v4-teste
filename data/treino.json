@@ -1,10 +1,10 @@
 {
   "programa": {
-    "titulo": "Treino de Ganho de Volume",
-    "subtitulo": "Prioridade Pernas",
-    "frequencia": "5x por semana",
-    "objetivo": "Ganho de volume com prioridade em quadríceps, posterior, glúteo e panturrilha.",
-    "restricoes": "Treino adaptado sem agachamento, passada, afundo, stiff pesado, terra e remada curvada livre.",
+    "titulo": "Volume Muscular",
+    "subtitulo": "Prioridade em Pernas",
+    "frequencia": "5 dias de musculação + cardio no domingo",
+    "objetivo": "Volume muscular com prioridade em pernas, progressão de carga e execução controlada.",
+    "restricoes": "Priorizar apoio, tronco estável e interromper o exercício em caso de dor, formigamento ou dor irradiada.",
     "brand": "PUSH/PULL",
     "subtitle_brand": "performance"
   },
@@ -13,9 +13,9 @@
       "id": "segunda",
       "dia": "Segunda-feira",
       "abreviacao": "SEG",
-      "nome": "Perna Quadríceps",
-      "foco": "Quadríceps + adutora + panturrilha",
-      "duracao": 75,
+      "nome": "Quadríceps",
+      "foco": "Leg press + Hack + extensora",
+      "duracao": 70,
       "imagem": "assets/covers/quadriceps-card-v3.png",
       "accent": "#FF7A00",
       "exercicios": [
@@ -23,55 +23,51 @@
           "id": "leg-press-45",
           "nome": "Leg Press 45°",
           "grupo": "Quadríceps",
-          "series": 5,
+          "series": 4,
           "repeticoes": "8–12",
           "descanso": 150,
-          "observacao": "Carga pesada com a lombar colada no banco."
+          "descansoTexto": "2–3 min",
+          "observacao": "Lombar apoiada; amplitude segura; progressão de carga."
         },
         {
-          "id": "leg-press-horizontal",
-          "nome": "Leg Press Horizontal",
+          "id": "hack-squat-articulado",
+          "nome": "Hack Squat Articulado",
           "grupo": "Quadríceps",
           "series": 4,
-          "repeticoes": "10–12",
-          "descanso": 120,
-          "observacao": "Amplitude controlada."
+          "repeticoes": "8–12",
+          "descanso": 150,
+          "descansoTexto": "2–3 min",
+          "observacao": "Tronco apoiado; joelhos acompanham os pés; foco no quadríceps."
         },
         {
           "id": "cadeira-extensora",
           "nome": "Cadeira Extensora",
           "grupo": "Quadríceps",
-          "series": 5,
-          "repeticoes": "12–15",
-          "descanso": 75,
-          "observacao": "Segurar 1 segundo no topo."
-        },
-        {
-          "id": "extensora-unilateral",
-          "nome": "Extensora Unilateral",
-          "grupo": "Quadríceps",
-          "series": 3,
-          "repeticoes": "12 cada perna",
-          "descanso": 75,
-          "observacao": "Corrigir diferença entre as pernas."
+          "series": 4,
+          "repeticoes": "10–15",
+          "descanso": 90,
+          "descansoTexto": "90 s",
+          "observacao": "Segurar 1 s no topo; última série pode chegar perto da falha."
         },
         {
           "id": "adutora",
-          "nome": "Adutora",
+          "nome": "Cadeira Adutora",
           "grupo": "Adutores",
-          "series": 4,
+          "series": 3,
           "repeticoes": "12–15",
           "descanso": 75,
-          "observacao": "Movimento controlado."
+          "descansoTexto": "60–90 s",
+          "observacao": "Movimento controlado, sem impulso."
         },
         {
           "id": "panturrilha-leg",
-          "nome": "Panturrilha no Leg ou em Pé",
+          "nome": "Panturrilha no Leg Press",
           "grupo": "Panturrilhas",
-          "series": 5,
+          "series": 4,
           "repeticoes": "10–15",
           "descanso": 75,
-          "observacao": "Pausa embaixo e em cima."
+          "descansoTexto": "60–90 s",
+          "observacao": "Amplitude completa; pausa embaixo e no topo."
         }
       ]
     },
@@ -80,73 +76,90 @@
       "dia": "Terça-feira",
       "abreviacao": "TER",
       "nome": "Push",
-      "foco": "Peito + ombro + tríceps",
-      "duracao": 65,
+      "foco": "Peitoral superior + ombros + tríceps",
+      "duracao": 75,
       "imagem": "assets/covers/push-card-v3.png",
       "accent": "#FF9D2E",
       "exercicios": [
         {
-          "id": "supino-reto",
-          "nome": "Supino Reto Máquina ou Halter",
+          "id": "supino-inclinado",
+          "nome": "Supino Inclinado na Máquina",
           "grupo": "Peito",
           "series": 4,
-          "repeticoes": "8–12",
+          "repeticoes": "6–10",
           "descanso": 150,
-          "observacao": "Evitar ponte exagerada."
+          "descansoTexto": "2–3 min",
+          "observacao": "Primeiro exercício do dia. Escápulas estáveis; descida controlada; subida forte."
         },
         {
-          "id": "supino-inclinado",
-          "nome": "Supino Inclinado Máquina",
+          "id": "peck-deck-superior",
+          "nome": "Peck Deck com Foco Superior",
           "grupo": "Peito",
-          "series": 4,
+          "series": 3,
+          "repeticoes": "10–15",
+          "descanso": 90,
+          "descansoTexto": "90 s",
+          "observacao": "Peito aberto; cotovelos levemente flexionados; contrair 1–2 s no fechamento."
+        },
+        {
+          "id": "supino-reto",
+          "nome": "Supino Reto na Máquina",
+          "grupo": "Peito",
+          "series": 3,
           "repeticoes": "8–12",
           "descanso": 120,
-          "observacao": "Controle total da descida."
+          "descansoTexto": "2 min",
+          "observacao": "Volume adicional com estabilidade; não perder tensão do peitoral."
         },
         {
           "id": "crucifixo-crossover",
-          "nome": "Crucifixo ou Crossover",
+          "nome": "Crossover na Polia",
           "grupo": "Peito",
-          "series": 3,
+          "series": 2,
           "repeticoes": "12–15",
           "descanso": 75,
-          "observacao": "Alongar sem dor no ombro."
+          "descansoTexto": "60–90 s",
+          "observacao": "Tronco estável; fechar espremendo o peito; sem balançar."
         },
         {
           "id": "desenvolvimento-maquina",
-          "nome": "Desenvolvimento Máquina",
+          "nome": "Desenvolvimento na Máquina",
           "grupo": "Ombros",
           "series": 3,
           "repeticoes": "8–12",
           "descanso": 120,
-          "observacao": "Costas apoiadas."
+          "descansoTexto": "2 min",
+          "observacao": "Costas apoiadas; sem compensar com a lombar."
         },
         {
           "id": "elevacao-lateral",
-          "nome": "Elevação Lateral",
+          "nome": "Elevação Lateral Máquina/Cabo",
           "grupo": "Ombros",
-          "series": 5,
+          "series": 4,
           "repeticoes": "12–20",
           "descanso": 75,
-          "observacao": "Priorizar queima e técnica."
+          "descansoTexto": "60–90 s",
+          "observacao": "Controle total; evitar embalo."
         },
         {
-          "id": "triceps-corda",
-          "nome": "Tríceps Corda",
+          "id": "triceps-pulley-v",
+          "nome": "Tríceps Pulley Barra V/Reta",
           "grupo": "Tríceps",
-          "series": 4,
-          "repeticoes": "10–15",
+          "series": 3,
+          "repeticoes": "8–12",
           "descanso": 75,
-          "observacao": "Abrir a corda no final."
+          "descansoTexto": "60–90 s",
+          "observacao": "Cotovelos fixos; trabalho mais pesado e progressivo."
         },
         {
           "id": "triceps-frances",
-          "nome": "Tríceps Francês no Cabo/Máquina",
+          "nome": "Tríceps Francês no Cabo",
           "grupo": "Tríceps",
           "series": 3,
-          "repeticoes": "10–12",
+          "repeticoes": "10–15",
           "descanso": 75,
-          "observacao": "Sem forçar a lombar."
+          "descansoTexto": "60–90 s",
+          "observacao": "Amplitude completa; foco na cabeça longa do tríceps."
         }
       ]
     },
@@ -154,9 +167,9 @@
       "id": "quarta",
       "dia": "Quarta-feira",
       "abreviacao": "QUA",
-      "nome": "Pernas Posterior",
-      "foco": "Posterior + glúteo + abdutora + panturrilha",
-      "duracao": 75,
+      "nome": "Posterior / Glúteos",
+      "foco": "Flexoras + pélvica + leg press pés altos",
+      "duracao": 70,
       "imagem": "assets/covers/posterior-card-v3.png",
       "accent": "#FFB14A",
       "exercicios": [
@@ -164,64 +177,61 @@
           "id": "mesa-flexora",
           "nome": "Mesa Flexora",
           "grupo": "Posterior",
-          "series": 5,
-          "repeticoes": "10–12",
-          "descanso": 90,
-          "observacao": "Contração forte no final."
+          "series": 4,
+          "repeticoes": "8–12",
+          "descanso": 120,
+          "descansoTexto": "2 min",
+          "observacao": "Contração forte no final; volta controlada."
         },
         {
           "id": "flexora-sentada",
           "nome": "Flexora Sentada",
           "grupo": "Posterior",
-          "series": 4,
+          "series": 5,
           "repeticoes": "12–15",
           "descanso": 90,
-          "observacao": "Controle na volta."
-        },
-        {
-          "id": "flexora-unilateral",
-          "nome": "Flexora Unilateral",
-          "grupo": "Posterior",
-          "series": 3,
-          "repeticoes": "12 cada perna",
-          "descanso": 75,
-          "observacao": "Ajustar diferença entre as pernas."
+          "descansoTexto": "90 s",
+          "observacao": "Maior volume no lugar da flexora unilateral."
         },
         {
           "id": "elevacao-pelvica",
-          "nome": "Elevação Pélvica Máquina",
+          "nome": "Elevação Pélvica na Máquina",
           "grupo": "Glúteos",
           "series": 4,
           "repeticoes": "8–12",
           "descanso": 150,
-          "observacao": "Subir forte, sem hiperestender a lombar."
+          "descansoTexto": "2–3 min",
+          "observacao": "Subir forte; não hiperestender a lombar."
         },
         {
-          "id": "gluteo-maquina",
-          "nome": "Glúteo Máquina",
-          "grupo": "Glúteos",
+          "id": "leg-press-altos",
+          "nome": "Leg Press 45° Pés Altos",
+          "grupo": "Posterior e glúteos",
           "series": 4,
-          "repeticoes": "12–15",
-          "descanso": 75,
-          "observacao": "Foco no glúteo, não na lombar."
+          "repeticoes": "10–12",
+          "descanso": 120,
+          "descansoTexto": "2 min",
+          "observacao": "Foco em posterior e glúteos; lombar sempre apoiada."
         },
         {
           "id": "abdutora",
-          "nome": "Abdutora",
+          "nome": "Cadeira Abdutora",
           "grupo": "Glúteos",
-          "series": 4,
+          "series": 3,
           "repeticoes": "15–20",
           "descanso": 75,
-          "observacao": "Pausa curta na abertura."
+          "descansoTexto": "60–90 s",
+          "observacao": "Pausa curta na abertura; sem balanço."
         },
         {
           "id": "panturrilha-sentada",
           "nome": "Panturrilha Sentada",
           "grupo": "Panturrilhas",
-          "series": 5,
+          "series": 4,
           "repeticoes": "12–20",
           "descanso": 75,
-          "observacao": "Amplitude completa."
+          "descansoTexto": "60–90 s",
+          "observacao": "Amplitude completa; ritmo controlado."
         }
       ]
     },
@@ -230,73 +240,90 @@
       "dia": "Quinta-feira",
       "abreviacao": "QUI",
       "nome": "Pull",
-      "foco": "Costas + bíceps + posterior de ombro",
-      "duracao": 65,
+      "foco": "Costas + deltoide posterior + bíceps",
+      "duracao": 75,
       "imagem": "assets/covers/pull-card-v3.png",
       "accent": "#FF7A00",
       "exercicios": [
         {
           "id": "puxada-alta",
-          "nome": "Puxada Alta Frente",
+          "nome": "Puxada Alta Pronada",
           "grupo": "Costas",
           "series": 4,
           "repeticoes": "8–12",
           "descanso": 120,
-          "observacao": "Peito aberto, sem jogar a lombar."
-        },
-        {
-          "id": "remada-baixa",
-          "nome": "Remada Baixa Máquina",
-          "grupo": "Costas",
-          "series": 4,
-          "repeticoes": "8–12",
-          "descanso": 120,
-          "observacao": "Tronco estável."
+          "descansoTexto": "2 min",
+          "observacao": "Peito aberto; puxar sem jogar o tronco para trás."
         },
         {
           "id": "remada-articulada",
-          "nome": "Remada Articulada com Apoio no Peito",
+          "nome": "Remada Articulada com Peito Apoiado",
           "grupo": "Costas",
           "series": 4,
-          "repeticoes": "10–12",
+          "repeticoes": "8–12",
           "descanso": 120,
-          "observacao": "Priorizar apoio para proteger a coluna."
+          "descansoTexto": "2 min",
+          "observacao": "Principal remada pesada; tronco totalmente estável."
+        },
+        {
+          "id": "remada-unilateral-maquina",
+          "nome": "Remada Unilateral na Máquina",
+          "grupo": "Costas",
+          "series": 3,
+          "repeticoes": "10–12",
+          "descanso": 105,
+          "descansoTexto": "90–120 s",
+          "observacao": "Trabalhar cada lado com amplitude e controle."
         },
         {
           "id": "pulldown",
           "nome": "Pulldown Braço Reto",
           "grupo": "Costas",
-          "series": 3,
+          "series": 2,
           "repeticoes": "12–15",
           "descanso": 75,
-          "observacao": "Foco em dorsais."
+          "descansoTexto": "60–90 s",
+          "observacao": "Foco em dorsais; sem transformar em tríceps."
         },
         {
-          "id": "face-pull",
-          "nome": "Face Pull",
-          "grupo": "Ombro posterior",
-          "series": 4,
-          "repeticoes": "12–20",
+          "id": "crucifixo-inverso",
+          "nome": "Crucifixo Inverso na Máquina",
+          "grupo": "Deltoide posterior",
+          "series": 3,
+          "repeticoes": "15–20",
           "descanso": 75,
-          "observacao": "Posterior de ombro e postura."
+          "descansoTexto": "60–90 s",
+          "observacao": "Deltoide posterior; peito apoiado e sem impulso."
         },
         {
           "id": "rosca-direta",
           "nome": "Rosca Direta Barra W",
           "grupo": "Bíceps",
           "series": 3,
-          "repeticoes": "8–12",
+          "repeticoes": "8–10",
           "descanso": 90,
-          "observacao": "Cotovelos fixos."
+          "descansoTexto": "90 s",
+          "observacao": "Exercício mais pesado de bíceps; cotovelos fixos."
         },
         {
-          "id": "rosca-alternada",
-          "nome": "Rosca Alternada ou Banco Inclinado",
+          "id": "rosca-inclinada",
+          "nome": "Rosca Inclinada com Halteres",
           "grupo": "Bíceps",
           "series": 3,
           "repeticoes": "10–12",
+          "descanso": 90,
+          "descansoTexto": "90 s",
+          "observacao": "Alongamento controlado; sem projetar o ombro."
+        },
+        {
+          "id": "rosca-martelo",
+          "nome": "Rosca Martelo",
+          "grupo": "Bíceps",
+          "series": 2,
+          "repeticoes": "10–12",
           "descanso": 75,
-          "observacao": "Controle total."
+          "descansoTexto": "60–90 s",
+          "observacao": "Foco em braquial e espessura do braço."
         }
       ]
     },
@@ -304,118 +331,126 @@
       "id": "sexta",
       "dia": "Sexta-feira",
       "abreviacao": "SEX",
-      "nome": "Pernas Completo",
-      "foco": "Quadríceps + posterior + glúteo + panturrilha",
-      "duracao": 80,
+      "nome": "Pernas Mistas",
+      "foco": "Segundo estímulo completo de pernas",
+      "duracao": 70,
       "imagem": "assets/covers/completo-card-v3.png",
       "accent": "#FFB14A",
       "exercicios": [
         {
           "id": "leg-press-medios",
-          "nome": "Leg Press 45° — Pés Médios",
+          "nome": "Leg Press 45° Pés Médios",
           "grupo": "Pernas",
-          "series": 4,
+          "series": 3,
           "repeticoes": "10–12",
-          "descanso": 150,
-          "observacao": "Estímulo geral."
+          "descanso": 120,
+          "descansoTexto": "2 min",
+          "observacao": "Estímulo geral; manter técnica perfeita."
         },
         {
-          "id": "leg-press-altos",
-          "nome": "Leg Press — Pés Altos",
-          "grupo": "Posterior e glúteos",
-          "series": 4,
+          "id": "hack-squat-articulado",
+          "nome": "Hack Squat Articulado",
+          "grupo": "Quadríceps",
+          "series": 3,
           "repeticoes": "10–12",
-          "descanso": 150,
-          "observacao": "Maior ênfase em posterior e glúteo."
+          "descanso": 120,
+          "descansoTexto": "2 min",
+          "observacao": "Volume moderado; não precisa repetir a carga máxima de segunda."
         },
         {
           "id": "cadeira-extensora-sexta",
           "nome": "Cadeira Extensora",
           "grupo": "Quadríceps",
-          "series": 4,
+          "series": 3,
           "repeticoes": "12–15",
-          "descanso": 75,
-          "observacao": "Finalizar quadríceps."
+          "descanso": 90,
+          "descansoTexto": "90 s",
+          "observacao": "Finalizar quadríceps com controle."
         },
         {
           "id": "mesa-flexora-sexta",
           "nome": "Mesa Flexora",
           "grupo": "Posterior",
-          "series": 4,
+          "series": 3,
           "repeticoes": "10–12",
           "descanso": 90,
-          "observacao": "Posterior pesado e controlado."
+          "descansoTexto": "90 s",
+          "observacao": "Posterior pesado, sem perder amplitude."
         },
         {
           "id": "elevacao-pelvica-sexta",
-          "nome": "Elevação Pélvica Máquina",
+          "nome": "Elevação Pélvica na Máquina",
           "grupo": "Glúteos",
-          "series": 4,
+          "series": 3,
           "repeticoes": "8–12",
-          "descanso": 150,
-          "observacao": "Glúteo pesado."
-        },
-        {
-          "id": "adutora-sexta",
-          "nome": "Adutora",
-          "grupo": "Adutores",
-          "series": 3,
-          "repeticoes": "15",
-          "descanso": 75,
-          "observacao": "Controle."
-        },
-        {
-          "id": "abdutora-sexta",
-          "nome": "Abdutora",
-          "grupo": "Glúteos",
-          "series": 3,
-          "repeticoes": "15–20",
-          "descanso": 75,
-          "observacao": "Pausa na abertura."
+          "descanso": 120,
+          "descansoTexto": "2 min",
+          "observacao": "Glúteos; controlar lombar e pelve."
         },
         {
           "id": "panturrilha-sexta",
           "nome": "Panturrilha",
           "grupo": "Panturrilhas",
-          "series": 5,
+          "series": 4,
           "repeticoes": "12–20",
           "descanso": 75,
-          "observacao": "Amplitude máxima."
+          "descansoTexto": "60–90 s",
+          "observacao": "Amplitude completa; pausa no alongamento e contração."
         }
       ]
     }
   ],
+  "cardio": {
+    "dia": "Domingo",
+    "nome": "Cardio",
+    "duracao": "45–60 min",
+    "intensidade": "Leve a moderada (RPE 5–6/10)",
+    "opcoes": "Esteira inclinada, bicicleta ou elíptico",
+    "esteira": "4,5–5,5 km/h com 5–10% de inclinação, ajustando ao condicionamento",
+    "evitar": "Evitar HIIT nesta fase e cardio que deixe as pernas destruídas para segunda-feira."
+  },
   "orientacoes": {
     "execucao": [
-      "Exercícios grandes: trabalhar com 1 a 2 repetições sobrando (RIR 1–2).",
-      "Isoladores podem chegar perto da falha na última série.",
-      "Descanso: 2 a 3 minutos nos exercícios pesados; 60 a 90 segundos nos isoladores.",
-      "Cadência: descida controlada de 2 a 3 segundos e subida forte.",
-      "Ao atingir o topo das repetições em todas as séries com boa execução, aumentar a carga na semana seguinte."
+      "Exercícios grandes: terminar normalmente com 1–2 repetições ainda possíveis (RIR 1–2).",
+      "A última série dos isoladores pode chegar muito perto da falha técnica.",
+      "Descida controlada por 2–3 segundos; subida forte sem perder a postura.",
+      "Ao atingir o topo das repetições em todas as séries com boa técnica, aumentar a carga levemente.",
+      "Aquecimentos não contam como séries válidas. Fazer 2–3 aproximações progressivas no primeiro exercício do dia."
     ],
     "coluna": [
-      "No leg press, não descer até a lombar arredondar.",
-      "Manter a lombar apoiada sempre que houver apoio.",
-      "Evitar prender a respiração de forma exagerada.",
-      "Priorizar máquinas, apoios e exercícios com tronco estável.",
-      "Dor na coluna, formigamento ou dor descendo para a perna: interromper o exercício e procurar orientação profissional."
+      "Priorizar apoio e tronco estável.",
+      "Manter a lombar apoiada nos exercícios que oferecem suporte.",
+      "Interromper o exercício em caso de dor, formigamento ou dor irradiada.",
+      "Em caso de dor persistente ou limitação funcional, procurar avaliação profissional."
     ],
-    "ciclo": [
+    "estrutura": [
       {
-        "periodo": "Semanas 1–2",
-        "conduta": "Ajustar cargas, aprender a execução e encontrar amplitude segura."
+        "periodo": "Segunda",
+        "conduta": "Quadríceps — Leg press + Hack + extensora."
       },
       {
-        "periodo": "Semanas 3–6",
-        "conduta": "Progressão forte: aumentar carga ou repetições toda semana."
+        "periodo": "Terça",
+        "conduta": "Push — peitoral superior + ombros + tríceps."
       },
       {
-        "periodo": "Semana 7",
-        "conduta": "Maior desempenho: buscar recorde técnico de carga ou repetições."
+        "periodo": "Quarta",
+        "conduta": "Posterior / Glúteos — flexoras + pélvica + leg press pés altos."
       },
       {
-        "periodo": "Semana 8",
-        "conduta": "Se houver muito cansaço, reduzir 30% do volume. Se estiver recuperado, manter."
+        "periodo": "Quinta",
+        "conduta": "Pull — costas + deltoide posterior + bíceps."
+      },
+      {
+        "periodo": "Sexta",
+        "conduta": "Pernas Mistas — segundo estímulo completo de pernas."
+      },
+      {
+        "periodo": "Sábado",
+        "conduta": "Descanso e recuperação."
+      },
+      {
+        "periodo": "Domingo",
+        "conduta": "Cardio 45–60 min leve/moderado (RPE 5–6/10)."
       }
     ]
   }

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260725-1">
+  <link rel="stylesheet" href="css/style.css?v=20260915-1">
 </head>
 <body>
   <div class="app-shell">
@@ -22,7 +22,7 @@
       <section class="rules-hero">
         <span class="eyebrow">TREINE FORTE. TREINE INTEIRO.</span>
         <h1>Técnica antes do ego.</h1>
-        <p>As regras abaixo fazem parte do programa de oito semanas.</p>
+        <p>As regras abaixo fazem parte do protocolo revisado de Setembro/2026.</p>
       </section>
 
       <section class="rule-card">
@@ -37,7 +37,7 @@
 
       <section class="section-block">
         <div class="section-heading">
-          <div><span class="eyebrow">CICLO</span><h2>8 semanas de progressão</h2></div>
+          <div><span class="eyebrow">ESTRUTURA</span><h2>Planejamento semanal</h2></div>
         </div>
         <div class="cycle-list" id="cycleList"></div>
       </section>
@@ -55,7 +55,7 @@
     </nav>
   </div>
 
-  <script src="js/treino-data.js?v=20260725-1"></script>
+  <script src="js/treino-data.js?v=20260915-1"></script>
   <script>
     const data = window.TREINO_DATA.orientacoes;
     const fillList = (id, items) => {
@@ -63,7 +63,7 @@
     };
     fillList('executionRules', data.execucao);
     fillList('spineRules', data.coluna);
-    document.getElementById('cycleList').innerHTML = data.ciclo.map((item, index) => `
+    document.getElementById('cycleList').innerHTML = data.estrutura.map((item, index) => `
       <article class="cycle-item">
         <span>${String(index + 1).padStart(2, '0')}</span>
         <div><strong>${item.periodo}</strong><p>${item.conduta}</p></div>

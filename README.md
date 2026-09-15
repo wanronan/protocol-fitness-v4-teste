@@ -1,30 +1,12 @@
-# Protocol Fitness V6
+# Protocol Fitness V4 Teste — Setembro/2026
 
-Versão combinada com as melhorias planejadas para V5 e V6.
+Atualização do treino conforme o PDF Treino do Márcio - Setembro/2026.
 
-## Novidades V5
+- 5 dias de musculação
+- sábado descanso
+- domingo cardio 45–60 min leve/moderado
+- reset semanal mantido
+- histórico preservado
+- marcações da semana são zeradas uma vez ao detectar o novo protocolo
 
-- Última carga e repetições mostradas em cada exercício
-- Sugestão automática para repetir ou aumentar a carga
-- Registro compacto de carga, repetições e RIR
-- Cronômetro fixo com -15 s, pausa e +15 s
-- Resumo ao finalizar: duração, exercícios, séries, volume e recordes
-- Histórico de recordes pessoais
-- Backup completo em JSON e restauração
-
-## Novidades V6
-
-- Gráfico de carga por exercício
-- Calendário mensal de frequência
-- Volume semanal por grupo muscular
-- Substituição de exercícios por sessão ou permanente
-- Exportação do histórico em CSV
-- Preferências de progressão e som do cronômetro
-
-## Dados existentes
-
-A versão usa a mesma chave de armazenamento das versões anteriores (`volumeWorkoutStateV1`) e migra os registros antigos. O reset semanal continua ocorrendo toda segunda-feira, preservando o histórico.
-
-## Publicação
-
-Envie todos os arquivos e pastas desta pasta para a raiz do repositório GitHub Pages. O arquivo `index.html` deve ficar na raiz.
+Envie o conteúdo desta pasta para o repositório `protocol-fitness-v4-teste`.

@@ -1,17 +1,17 @@
-const CACHE = 'protocol-fitness-v6-20260725-1';
+const CACHE = 'protocol-fitness-v4-marcio-setembro-2026';
 const ASSETS = [
   './',
   './index.html',
   './treino.html',
   './progresso.html',
   './orientacoes.html',
-  './css/style.css?v=20260725-1',
-  './js/treino-data.js?v=20260725-1',
-  './js/storage.js?v=20260725-1',
-  './js/app.js?v=20260725-1',
-  './js/treino.js?v=20260725-1',
-  './js/progresso.js?v=20260725-1',
-  './manifest.json?v=20260725-1',
+  './css/style.css?v=20260915-1',
+  './js/treino-data.js?v=20260915-1',
+  './js/storage.js?v=20260915-1',
+  './js/app.js?v=20260915-1',
+  './js/treino.js?v=20260915-1',
+  './js/progresso.js?v=20260915-1',
+  './manifest.json?v=20260915-1',
   './assets/icons/protocol-fitness-logo.png',
   './assets/icons/icon-192.png',
   './assets/icons/icon-512.png',
@@ -53,15 +53,10 @@ self.addEventListener('fetch', (event) => {
   }
 
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      const network = fetch(event.request).then((response) => {
-        if (response.ok) {
-          const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put(event.request, copy));
-        }
-        return response;
-      });
-      return cached || network;
-    })
+    caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+      const copy = response.clone();
+      caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+      return response;
+    }))
   );
 });
