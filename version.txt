@@ -1,2 +1,3 @@
-Protocol Fitness V4 Teste — Treino Márcio Setembro/2026 — UI Premium
-Cache: protocol-fitness-v4-marcio-setembro-2026-premium-ui
+Protocol Fitness V4 Premium - imagens completas
+Cache: protocol-fitness-v4-premium-exercicios-v3
+Build: 2026-09-15

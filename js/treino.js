@@ -26,10 +26,38 @@ const getItem = (exerciseId) => state.sets?.[exerciseId]?.["1"] || {};
 const formatSeries = ex => `${ex.series}x${ex.repeticoes}`;
 
 const exerciseImages = {
-  'supino-inclinado': 'assets/exercises/supino-inclinado.png',
-  'peck-deck-superior': 'assets/exercises/peck-deck-superior.png',
-  'supino-reto': 'assets/exercises/supino-reto.png',
-  'crucifixo-crossover': 'assets/exercises/crossover-polia.png'
+  'leg-press-45': 'assets/exercises/leg-press-45.webp',
+  'hack-squat-articulado': 'assets/exercises/hack-squat-articulado.webp',
+  'cadeira-extensora': 'assets/exercises/cadeira-extensora.webp',
+  'adutora': 'assets/exercises/adutora.webp',
+  'panturrilha-leg': 'assets/exercises/panturrilha-leg.webp',
+  'supino-inclinado': 'assets/exercises/supino-inclinado.webp',
+  'peck-deck-superior': 'assets/exercises/peck-deck-superior.webp',
+  'supino-reto': 'assets/exercises/supino-reto.webp',
+  'crucifixo-crossover': 'assets/exercises/crucifixo-crossover.webp',
+  'desenvolvimento-maquina': 'assets/exercises/desenvolvimento-maquina.webp',
+  'elevacao-lateral': 'assets/exercises/elevacao-lateral.webp',
+  'triceps-pulley-v': 'assets/exercises/triceps-pulley-v.webp',
+  'triceps-frances': 'assets/exercises/triceps-frances.webp',
+  'mesa-flexora': 'assets/exercises/mesa-flexora.webp',
+  'flexora-sentada': 'assets/exercises/flexora-sentada.webp',
+  'elevacao-pelvica': 'assets/exercises/elevacao-pelvica.webp',
+  'leg-press-altos': 'assets/exercises/leg-press-altos.webp',
+  'abdutora': 'assets/exercises/abdutora.webp',
+  'panturrilha-sentada': 'assets/exercises/panturrilha-sentada.webp',
+  'puxada-alta': 'assets/exercises/puxada-alta.webp',
+  'remada-articulada': 'assets/exercises/remada-articulada.webp',
+  'remada-unilateral-maquina': 'assets/exercises/remada-unilateral-maquina.webp',
+  'pulldown': 'assets/exercises/pulldown.webp',
+  'crucifixo-inverso': 'assets/exercises/crucifixo-inverso.webp',
+  'rosca-direta': 'assets/exercises/rosca-direta.webp',
+  'rosca-inclinada': 'assets/exercises/rosca-inclinada.webp',
+  'rosca-martelo': 'assets/exercises/rosca-martelo.webp',
+  'leg-press-medios': 'assets/exercises/leg-press-medios.webp',
+  'cadeira-extensora-sexta': 'assets/exercises/cadeira-extensora-sexta.webp',
+  'mesa-flexora-sexta': 'assets/exercises/mesa-flexora-sexta.webp',
+  'elevacao-pelvica-sexta': 'assets/exercises/elevacao-pelvica-sexta.webp',
+  'panturrilha-sexta': 'assets/exercises/panturrilha-sexta.webp'
 };
 
 const getExerciseImage = (exercise) => exerciseImages[exercise.id] || day.imagem;
