@@ -1,152 +1,206 @@
 (() => {
-  const KEY = 'volumeWorkoutStateV1';
-  const PLAN_VERSION = 'marcio-setembro-2026';
+  const KEY = 'protocolFitnessV6State';
+  const LEGACY_KEY = 'volumeWorkoutStateV1';
+  const PLAN_VERSION = 'casal-dez-2026-v1';
 
   const weekKey = (value = new Date()) => {
     const date = new Date(value);
     date.setHours(0, 0, 0, 0);
-
-    // Segunda-feira é o primeiro dia do ciclo semanal.
     const weekday = date.getDay() || 7;
     date.setDate(date.getDate() - weekday + 1);
-
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
   };
 
-  const defaultState = () => ({
-    activeWeek: weekKey(),
+  const profileState = () => ({
     planVersion: PLAN_VERSION,
+    activeWeek: weekKey(),
     workouts: {},
     history: [],
+    measures: []
   });
 
-  const save = (state) => {
-    state.activeWeek ||= weekKey();
-    state.workouts ||= {};
-    state.history ||= [];
-
-    // Novo protocolo: limpa apenas as marcações da semana anterior, preservando o histórico.
-    if (state.planVersion !== PLAN_VERSION) {
-      state.workouts = {};
-      state.planVersion = PLAN_VERSION;
-      state.lastPlanChangeAt = new Date().toISOString();
-      changed = true;
+  const defaultState = () => ({
+    version: 6,
+    activeProfile: 'wanderson',
+    profiles: {
+      wanderson: profileState(),
+      fernanda: profileState()
     }
-    localStorage.setItem(KEY, JSON.stringify(state));
+  });
+
+  const persist = (state) => localStorage.setItem(KEY, JSON.stringify(state));
+
+  const migrateLegacy = () => {
+    const fresh = defaultState();
+    try {
+      const legacy = JSON.parse(localStorage.getItem(LEGACY_KEY));
+      if (legacy && typeof legacy === 'object') {
+        fresh.profiles.wanderson.history = (legacy.history || []).map(item => ({
+          ...item,
+          legacy: true,
+          program: 'Protocol Fitness V4'
+        }));
+      }
+    } catch (_) {}
+    persist(fresh);
+    return fresh;
   };
 
-  const normalizeWeek = (state) => {
+  const normalizeProfile = (p) => {
+    p ||= profileState();
+    p.workouts ||= {};
+    p.history ||= [];
+    p.measures ||= [];
+    p.activeWeek ||= weekKey();
+
+    if (p.planVersion !== PLAN_VERSION) {
+      p.workouts = {};
+      p.planVersion = PLAN_VERSION;
+      p.lastPlanChangeAt = new Date().toISOString();
+    }
+
     const currentWeek = weekKey();
-    let changed = false;
-
-    state.workouts ||= {};
-    state.history ||= [];
-
-    // Migra quem já usava a versão antiga, que não guardava a semana.
-    if (!state.activeWeek) {
-      const updateDates = Object.values(state.workouts)
-        .map((workout) => workout?.updatedAt)
-        .filter(Boolean)
-        .map((date) => new Date(date))
-        .filter((date) => !Number.isNaN(date.getTime()))
-        .sort((a, b) => b - a);
-
-      state.activeWeek = updateDates.length
-        ? weekKey(updateDates[0])
-        : currentWeek;
-      changed = true;
+    if (p.activeWeek !== currentWeek) {
+      p.workouts = {};
+      p.activeWeek = currentWeek;
+      p.lastWeeklyResetAt = new Date().toISOString();
     }
-
-    // Ao entrar em uma nova segunda-feira, limpa somente as marcações
-    // da semana. O histórico de treinos finalizados continua salvo.
-    if (state.activeWeek !== currentWeek) {
-      state.workouts = {};
-      state.activeWeek = currentWeek;
-      state.lastWeeklyResetAt = new Date().toISOString();
-      changed = true;
-    }
-
-    if (changed) save(state);
-    return state;
+    return p;
   };
 
   const load = () => {
+    let state;
     try {
-      const parsed = JSON.parse(localStorage.getItem(KEY));
-      const state = parsed && typeof parsed === 'object'
-        ? parsed
-        : defaultState();
-      return normalizeWeek(state);
-    } catch {
-      const state = defaultState();
-      save(state);
-      return state;
-    }
-  };
+      state = JSON.parse(localStorage.getItem(KEY));
+    } catch (_) {}
+    if (!state || typeof state !== 'object') state = migrateLegacy();
 
-  const getWorkout = (dayId) => {
-    const state = load();
-    return state.workouts[dayId] || {
-      sets: {},
-      finished: false,
-      updatedAt: null,
-    };
-  };
-
-  const saveSet = (dayId, exerciseId, setNumber, payload) => {
-    const state = load();
-    state.workouts[dayId] ||= {
-      sets: {},
-      finished: false,
-      updatedAt: null,
-    };
-    state.workouts[dayId].sets[exerciseId] ||= {};
-    state.workouts[dayId].sets[exerciseId][setNumber] = payload;
-    state.workouts[dayId].updatedAt = new Date().toISOString();
-    save(state);
+    state.activeProfile = ['wanderson', 'fernanda'].includes(state.activeProfile)
+      ? state.activeProfile : 'wanderson';
+    state.profiles ||= {};
+    state.profiles.wanderson = normalizeProfile(state.profiles.wanderson);
+    state.profiles.fernanda = normalizeProfile(state.profiles.fernanda);
+    persist(state);
     return state;
   };
 
-  const finishWorkout = (dayId, dayName, percent) => {
+  const getActiveProfile = () => load().activeProfile;
+
+  const setActiveProfile = (profileId) => {
+    if (!['wanderson', 'fernanda'].includes(profileId)) return;
     const state = load();
-    state.workouts[dayId] ||= {
-      sets: {},
+    state.activeProfile = profileId;
+    persist(state);
+  };
+
+  const getProfile = (profileId = getActiveProfile()) => load().profiles[profileId];
+
+  const getWorkout = (dayId, profileId = getActiveProfile()) => {
+    const p = getProfile(profileId);
+    return p.workouts[dayId] || {
+      exercises: {},
       finished: false,
-      updatedAt: null,
+      updatedAt: null
     };
-    state.workouts[dayId].finished = true;
-    state.workouts[dayId].updatedAt = new Date().toISOString();
-    state.history.unshift({
-      id: `${dayId}-${Date.now()}`,
+  };
+
+  const ensureExercise = (state, profileId, dayId, exerciseId) => {
+    const p = state.profiles[profileId];
+    p.workouts[dayId] ||= { exercises: {}, finished: false, updatedAt: null };
+    p.workouts[dayId].exercises ||= {};
+    p.workouts[dayId].exercises[exerciseId] ||= { weight: '', sets: {} };
+    p.workouts[dayId].exercises[exerciseId].sets ||= {};
+    return p.workouts[dayId].exercises[exerciseId];
+  };
+
+  const saveWeight = (dayId, exerciseId, weight, profileId = getActiveProfile()) => {
+    const state = load();
+    const ex = ensureExercise(state, profileId, dayId, exerciseId);
+    ex.weight = weight;
+    state.profiles[profileId].workouts[dayId].updatedAt = new Date().toISOString();
+    persist(state);
+  };
+
+  const saveSet = (dayId, exerciseId, setNumber, payload, profileId = getActiveProfile()) => {
+    const state = load();
+    const ex = ensureExercise(state, profileId, dayId, exerciseId);
+    ex.sets[String(setNumber)] = { ...(ex.sets[String(setNumber)] || {}), ...payload };
+    state.profiles[profileId].workouts[dayId].updatedAt = new Date().toISOString();
+    persist(state);
+    return state.profiles[profileId].workouts[dayId];
+  };
+
+  const findLastWeight = (exerciseId, profileId = getActiveProfile()) => {
+    const p = getProfile(profileId);
+    for (const item of p.history || []) {
+      const value = item.exercises?.[exerciseId]?.weight;
+      if (value !== '' && value !== undefined && value !== null) return value;
+    }
+    return null;
+  };
+
+  const finishWorkout = (dayId, dayName, percent, profileId = getActiveProfile()) => {
+    const state = load();
+    const p = state.profiles[profileId];
+    p.workouts[dayId] ||= { exercises: {}, finished: false, updatedAt: null };
+    const workout = p.workouts[dayId];
+    workout.finished = true;
+    workout.updatedAt = new Date().toISOString();
+    p.history.unshift({
+      id: `${profileId}-${dayId}-${Date.now()}`,
       dayId,
       name: dayName,
       percent,
       date: new Date().toISOString(),
+      program: 'Protocol Fitness V6',
+      exercises: JSON.parse(JSON.stringify(workout.exercises || {}))
     });
-    state.history = state.history.slice(0, 20);
-    save(state);
+    p.history = p.history.slice(0, 50);
+    persist(state);
   };
 
-  const resetWeek = () => {
+  const saveMeasure = (measure, profileId = getActiveProfile()) => {
     const state = load();
-    state.workouts = {};
-    state.activeWeek = weekKey();
-    state.lastWeeklyResetAt = new Date().toISOString();
-    save(state);
+    const p = state.profiles[profileId];
+    p.measures ||= [];
+    p.measures.unshift({
+      id: `${profileId}-measure-${Date.now()}`,
+      ...measure,
+      savedAt: new Date().toISOString()
+    });
+    p.measures = p.measures.slice(0, 30);
+    persist(state);
   };
 
-  const reset = () => localStorage.removeItem(KEY);
+  const resetWeek = (profileId = getActiveProfile()) => {
+    const state = load();
+    state.profiles[profileId].workouts = {};
+    state.profiles[profileId].activeWeek = weekKey();
+    state.profiles[profileId].lastWeeklyResetAt = new Date().toISOString();
+    persist(state);
+  };
+
+  const resetProfile = (profileId = getActiveProfile()) => {
+    const state = load();
+    state.profiles[profileId] = profileState();
+    persist(state);
+  };
 
   window.WorkoutStorage = {
     load,
-    save,
+    getActiveProfile,
+    setActiveProfile,
+    getProfile,
     getWorkout,
+    saveWeight,
     saveSet,
+    findLastWeight,
     finishWorkout,
+    saveMeasure,
     resetWeek,
-    reset,
+    resetProfile
   };
 })();

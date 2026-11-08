@@ -1,1 +1,657 @@
-window.TREINO_DATA = {"programa":{"titulo":"Volume Muscular","subtitulo":"Prioridade em Pernas","frequencia":"5 dias de musculação + cardio no domingo","objetivo":"Volume muscular com prioridade em pernas, progressão de carga e execução controlada.","restricoes":"Priorizar apoio, tronco estável e interromper o exercício em caso de dor, formigamento ou dor irradiada.","brand":"PUSH/PULL","subtitle_brand":"performance"},"dias":[{"id":"segunda","dia":"Segunda-feira","abreviacao":"SEG","nome":"Quadríceps","foco":"Leg press + Hack + extensora","duracao":70,"imagem":"assets/covers/quadriceps-card-v3.png","accent":"#FF7A00","exercicios":[{"id":"leg-press-45","nome":"Leg Press 45°","grupo":"Quadríceps","series":4,"repeticoes":"8–12","descanso":150,"descansoTexto":"2–3 min","observacao":"Lombar apoiada; amplitude segura; progressão de carga."},{"id":"hack-squat-articulado","nome":"Hack Squat Articulado","grupo":"Quadríceps","series":4,"repeticoes":"8–12","descanso":150,"descansoTexto":"2–3 min","observacao":"Tronco apoiado; joelhos acompanham os pés; foco no quadríceps."},{"id":"cadeira-extensora","nome":"Cadeira Extensora","grupo":"Quadríceps","series":4,"repeticoes":"10–15","descanso":90,"descansoTexto":"90 s","observacao":"Segurar 1 s no topo; última série pode chegar perto da falha."},{"id":"adutora","nome":"Cadeira Adutora","grupo":"Adutores","series":3,"repeticoes":"12–15","descanso":75,"descansoTexto":"60–90 s","observacao":"Movimento controlado, sem impulso."},{"id":"panturrilha-leg","nome":"Panturrilha no Leg Press","grupo":"Panturrilhas","series":4,"repeticoes":"10–15","descanso":75,"descansoTexto":"60–90 s","observacao":"Amplitude completa; pausa embaixo e no topo."}]},{"id":"terca","dia":"Terça-feira","abreviacao":"TER","nome":"Push","foco":"Peitoral superior + ombros + tríceps","duracao":75,"imagem":"assets/covers/push-card-v3.png","accent":"#FF9D2E","exercicios":[{"id":"supino-inclinado","nome":"Supino Inclinado na Máquina","grupo":"Peito","series":4,"repeticoes":"6–10","descanso":150,"descansoTexto":"2–3 min","observacao":"Primeiro exercício do dia. Escápulas estáveis; descida controlada; subida forte."},{"id":"peck-deck-superior","nome":"Peck Deck com Foco Superior","grupo":"Peito","series":3,"repeticoes":"10–15","descanso":90,"descansoTexto":"90 s","observacao":"Peito aberto; cotovelos levemente flexionados; contrair 1–2 s no fechamento."},{"id":"supino-reto","nome":"Supino Reto na Máquina","grupo":"Peito","series":3,"repeticoes":"8–12","descanso":120,"descansoTexto":"2 min","observacao":"Volume adicional com estabilidade; não perder tensão do peitoral."},{"id":"crucifixo-crossover","nome":"Crossover na Polia","grupo":"Peito","series":2,"repeticoes":"12–15","descanso":75,"descansoTexto":"60–90 s","observacao":"Tronco estável; fechar espremendo o peito; sem balançar."},{"id":"desenvolvimento-maquina","nome":"Desenvolvimento na Máquina","grupo":"Ombros","series":3,"repeticoes":"8–12","descanso":120,"descansoTexto":"2 min","observacao":"Costas apoiadas; sem compensar com a lombar."},{"id":"elevacao-lateral","nome":"Elevação Lateral Máquina/Cabo","grupo":"Ombros","series":4,"repeticoes":"12–20","descanso":75,"descansoTexto":"60–90 s","observacao":"Controle total; evitar embalo."},{"id":"triceps-pulley-v","nome":"Tríceps Pulley Barra V/Reta","grupo":"Tríceps","series":3,"repeticoes":"8–12","descanso":75,"descansoTexto":"60–90 s","observacao":"Cotovelos fixos; trabalho mais pesado e progressivo."},{"id":"triceps-frances","nome":"Tríceps Francês no Cabo","grupo":"Tríceps","series":3,"repeticoes":"10–15","descanso":75,"descansoTexto":"60–90 s","observacao":"Amplitude completa; foco na cabeça longa do tríceps."}]},{"id":"quarta","dia":"Quarta-feira","abreviacao":"QUA","nome":"Posterior / Glúteos","foco":"Flexoras + pélvica + leg press pés altos","duracao":70,"imagem":"assets/covers/posterior-card-v3.png","accent":"#FFB14A","exercicios":[{"id":"mesa-flexora","nome":"Mesa Flexora","grupo":"Posterior","series":4,"repeticoes":"8–12","descanso":120,"descansoTexto":"2 min","observacao":"Contração forte no final; volta controlada."},{"id":"flexora-sentada","nome":"Flexora Sentada","grupo":"Posterior","series":5,"repeticoes":"12–15","descanso":90,"descansoTexto":"90 s","observacao":"Maior volume no lugar da flexora unilateral."},{"id":"elevacao-pelvica","nome":"Elevação Pélvica na Máquina","grupo":"Glúteos","series":4,"repeticoes":"8–12","descanso":150,"descansoTexto":"2–3 min","observacao":"Subir forte; não hiperestender a lombar."},{"id":"leg-press-altos","nome":"Leg Press 45° Pés Altos","grupo":"Posterior e glúteos","series":4,"repeticoes":"10–12","descanso":120,"descansoTexto":"2 min","observacao":"Foco em posterior e glúteos; lombar sempre apoiada."},{"id":"abdutora","nome":"Cadeira Abdutora","grupo":"Glúteos","series":3,"repeticoes":"15–20","descanso":75,"descansoTexto":"60–90 s","observacao":"Pausa curta na abertura; sem balanço."},{"id":"panturrilha-sentada","nome":"Panturrilha Sentada","grupo":"Panturrilhas","series":4,"repeticoes":"12–20","descanso":75,"descansoTexto":"60–90 s","observacao":"Amplitude completa; ritmo controlado."}]},{"id":"quinta","dia":"Quinta-feira","abreviacao":"QUI","nome":"Pull","foco":"Costas + deltoide posterior + bíceps","duracao":75,"imagem":"assets/covers/pull-card-v3.png","accent":"#FF7A00","exercicios":[{"id":"puxada-alta","nome":"Puxada Alta Pronada","grupo":"Costas","series":4,"repeticoes":"8–12","descanso":120,"descansoTexto":"2 min","observacao":"Peito aberto; puxar sem jogar o tronco para trás."},{"id":"remada-articulada","nome":"Remada Articulada com Peito Apoiado","grupo":"Costas","series":4,"repeticoes":"8–12","descanso":120,"descansoTexto":"2 min","observacao":"Principal remada pesada; tronco totalmente estável."},{"id":"remada-unilateral-maquina","nome":"Remada Unilateral na Máquina","grupo":"Costas","series":3,"repeticoes":"10–12","descanso":105,"descansoTexto":"90–120 s","observacao":"Trabalhar cada lado com amplitude e controle."},{"id":"pulldown","nome":"Pulldown Braço Reto","grupo":"Costas","series":2,"repeticoes":"12–15","descanso":75,"descansoTexto":"60–90 s","observacao":"Foco em dorsais; sem transformar em tríceps."},{"id":"crucifixo-inverso","nome":"Crucifixo Inverso na Máquina","grupo":"Deltoide posterior","series":3,"repeticoes":"15–20","descanso":75,"descansoTexto":"60–90 s","observacao":"Deltoide posterior; peito apoiado e sem impulso."},{"id":"rosca-direta","nome":"Rosca Direta Barra W","grupo":"Bíceps","series":3,"repeticoes":"8–10","descanso":90,"descansoTexto":"90 s","observacao":"Exercício mais pesado de bíceps; cotovelos fixos."},{"id":"rosca-inclinada","nome":"Rosca Inclinada com Halteres","grupo":"Bíceps","series":3,"repeticoes":"10–12","descanso":90,"descansoTexto":"90 s","observacao":"Alongamento controlado; sem projetar o ombro."},{"id":"rosca-martelo","nome":"Rosca Martelo","grupo":"Bíceps","series":2,"repeticoes":"10–12","descanso":75,"descansoTexto":"60–90 s","observacao":"Foco em braquial e espessura do braço."}]},{"id":"sexta","dia":"Sexta-feira","abreviacao":"SEX","nome":"Pernas Mistas","foco":"Segundo estímulo completo de pernas","duracao":70,"imagem":"assets/covers/completo-card-v3.png","accent":"#FFB14A","exercicios":[{"id":"leg-press-medios","nome":"Leg Press 45° Pés Médios","grupo":"Pernas","series":3,"repeticoes":"10–12","descanso":120,"descansoTexto":"2 min","observacao":"Estímulo geral; manter técnica perfeita."},{"id":"hack-squat-articulado","nome":"Hack Squat Articulado","grupo":"Quadríceps","series":3,"repeticoes":"10–12","descanso":120,"descansoTexto":"2 min","observacao":"Volume moderado; não precisa repetir a carga máxima de segunda."},{"id":"cadeira-extensora-sexta","nome":"Cadeira Extensora","grupo":"Quadríceps","series":3,"repeticoes":"12–15","descanso":90,"descansoTexto":"90 s","observacao":"Finalizar quadríceps com controle."},{"id":"mesa-flexora-sexta","nome":"Mesa Flexora","grupo":"Posterior","series":3,"repeticoes":"10–12","descanso":90,"descansoTexto":"90 s","observacao":"Posterior pesado, sem perder amplitude."},{"id":"elevacao-pelvica-sexta","nome":"Elevação Pélvica na Máquina","grupo":"Glúteos","series":3,"repeticoes":"8–12","descanso":120,"descansoTexto":"2 min","observacao":"Glúteos; controlar lombar e pelve."},{"id":"panturrilha-sexta","nome":"Panturrilha","grupo":"Panturrilhas","series":4,"repeticoes":"12–20","descanso":75,"descansoTexto":"60–90 s","observacao":"Amplitude completa; pausa no alongamento e contração."}]}],"cardio":{"dia":"Domingo","nome":"Cardio","duracao":"45–60 min","intensidade":"Leve a moderada (RPE 5–6/10)","opcoes":"Esteira inclinada, bicicleta ou elíptico","esteira":"4,5–5,5 km/h com 5–10% de inclinação, ajustando ao condicionamento","evitar":"Evitar HIIT nesta fase e cardio que deixe as pernas destruídas para segunda-feira."},"orientacoes":{"execucao":["Exercícios grandes: terminar normalmente com 1–2 repetições ainda possíveis (RIR 1–2).","A última série dos isoladores pode chegar muito perto da falha técnica.","Descida controlada por 2–3 segundos; subida forte sem perder a postura.","Ao atingir o topo das repetições em todas as séries com boa técnica, aumentar a carga levemente.","Aquecimentos não contam como séries válidas. Fazer 2–3 aproximações progressivas no primeiro exercício do dia."],"coluna":["Priorizar apoio e tronco estável.","Manter a lombar apoiada nos exercícios que oferecem suporte.","Interromper o exercício em caso de dor, formigamento ou dor irradiada.","Em caso de dor persistente ou limitação funcional, procurar avaliação profissional."],"estrutura":[{"periodo":"Segunda","conduta":"Quadríceps — Leg press + Hack + extensora."},{"periodo":"Terça","conduta":"Push — peitoral superior + ombros + tríceps."},{"periodo":"Quarta","conduta":"Posterior / Glúteos — flexoras + pélvica + leg press pés altos."},{"periodo":"Quinta","conduta":"Pull — costas + deltoide posterior + bíceps."},{"periodo":"Sexta","conduta":"Pernas Mistas — segundo estímulo completo de pernas."},{"periodo":"Sábado","conduta":"Descanso e recuperação."},{"periodo":"Domingo","conduta":"Cardio 45–60 min leve/moderado (RPE 5–6/10)."}]}};
+window.TREINO_DATA = {
+  "programa": {
+    "titulo": "Protocol Fitness V6",
+    "subtitulo": "Wanderson + Fernanda",
+    "validade": "09/11/2026 até 31/12/2026; revisar em 30/11 após avaliação.",
+    "proposta": "Três sessões de membros inferiores por semana para os dois, com duas sessões parciais de superiores.",
+    "review": "30/11/2026",
+    "brand": "PROTOCOL FITNESS",
+    "subtitle_brand": "TREINO E EVOLUÇÃO"
+  },
+  "perfis": {
+    "wanderson": {
+      "id": "wanderson",
+      "nome": "Wanderson",
+      "iniciais": "W",
+      "dias": "5 dias"
+    },
+    "fernanda": {
+      "id": "fernanda",
+      "nome": "Fernanda",
+      "iniciais": "F",
+      "dias": "4 treinos + 1 descanso"
+    }
+  },
+  "dias": [
+    {
+      "id": "segunda",
+      "dia": "Segunda-feira",
+      "abreviacao": "SEG",
+      "nome": "Pernas A · Quadríceps",
+      "foco": "Pernas A · Quadríceps",
+      "duracaoTexto": "60–85 min",
+      "imagem": "assets/covers/quadriceps-card-v3.png",
+      "exercicios": [
+        {
+          "id": "agachamento-livre-ou-smith",
+          "nome": "Agachamento livre ou Smith",
+          "tipo": "forca",
+          "descanso": "2–3 min",
+          "descansoSegundos": 180,
+          "observacao": "Agachar com controle, amplitude confortável",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 6–10",
+              "series": 3,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 8–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "leg-press-45",
+          "nome": "Leg press 45°",
+          "tipo": "forca",
+          "descanso": "90–120 s",
+          "descansoSegundos": 120,
+          "observacao": "Não arredondar a lombar no fundo",
+          "imagem": "assets/exercises/leg-press-45.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 10–12",
+              "series": 3,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "passada-reversa-com-halteres",
+          "nome": "Passada reversa com halteres",
+          "tipo": "forca",
+          "descanso": "90 s",
+          "descansoSegundos": 90,
+          "observacao": "Alternativa: avanço estacionário",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 10/cada",
+              "series": 2,
+              "rir": "2–3"
+            },
+            "fernanda": {
+              "texto": "2 × 8/cada",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "cadeira-extensora",
+          "nome": "Cadeira extensora",
+          "tipo": "forca",
+          "descanso": "60–90 s",
+          "descansoSegundos": 90,
+          "observacao": "Sem impulsos",
+          "imagem": "assets/exercises/cadeira-extensora.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "1–2"
+            },
+            "fernanda": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "2–3"
+            }
+          }
+        },
+        {
+          "id": "panturrilha-em-pe",
+          "nome": "Panturrilha em pé",
+          "tipo": "forca",
+          "descanso": "60 s",
+          "descansoSegundos": 60,
+          "observacao": "Amplitude plena e pausa",
+          "imagem": "assets/exercises/panturrilha-leg.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 10–15",
+              "series": 3,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "terca",
+      "dia": "Terça-feira",
+      "abreviacao": "TER",
+      "nome": "Superiores completos",
+      "foco": "Superiores completos",
+      "duracaoTexto": "60–85 min",
+      "imagem": "assets/covers/push-card-v3.png",
+      "exercicios": [
+        {
+          "id": "supino-reto-com-halteres",
+          "nome": "Supino reto com halteres",
+          "tipo": "forca",
+          "descanso": "2 min",
+          "descansoSegundos": 120,
+          "observacao": "Progressão sem falhar em toda série",
+          "imagem": "assets/exercises/supino-reto.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 6–10",
+              "series": 3,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 8–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "remada-baixa-ou-apoiada",
+          "nome": "Remada baixa ou apoiada",
+          "tipo": "forca",
+          "descanso": "90 s",
+          "descansoSegundos": 90,
+          "observacao": "Tronco estável",
+          "imagem": "assets/exercises/remada-articulada.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 8–12",
+              "series": 3,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "puxada-alta-frontal",
+          "nome": "Puxada alta frontal",
+          "tipo": "forca",
+          "descanso": "90 s",
+          "descansoSegundos": 90,
+          "observacao": "Evitar puxada atrás da cabeça",
+          "imagem": "assets/exercises/puxada-alta.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 8–12",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "desenvolvimento-com-halteres",
+          "nome": "Desenvolvimento com halteres",
+          "tipo": "forca",
+          "descanso": "90 s",
+          "descansoSegundos": 90,
+          "observacao": "Controle dos ombros",
+          "imagem": "assets/exercises/desenvolvimento-maquina.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 8–12",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "elevacao-lateral",
+          "nome": "Elevação lateral",
+          "tipo": "forca",
+          "descanso": "60 s",
+          "descansoSegundos": 60,
+          "observacao": "Sem balanço",
+          "imagem": "assets/exercises/elevacao-lateral.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "triceps-polia",
+          "nome": "Tríceps polia",
+          "tipo": "forca",
+          "descanso": "60 s",
+          "descansoSegundos": 60,
+          "observacao": "Cotovelos estáveis",
+          "imagem": "assets/exercises/triceps-pulley-v.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 10–15",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–15",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "rosca-alternada",
+          "nome": "Rosca alternada",
+          "tipo": "forca",
+          "descanso": "60 s",
+          "descansoSegundos": 60,
+          "observacao": "Sem impulso",
+          "imagem": "assets/exercises/rosca-inclinada.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "quarta",
+      "dia": "Quarta-feira",
+      "abreviacao": "QUA",
+      "nome": "Condicionamento (só Wanderson)",
+      "foco": "Condicionamento (só Wanderson)",
+      "duracaoTexto": "30–40 min + core",
+      "imagem": "assets/covers/posterior-card-v3.png",
+      "exercicios": [
+        {
+          "id": "bicicleta-eliptico-ou-caminhada-inclinada",
+          "nome": "Bicicleta, elíptico ou caminhada inclinada",
+          "tipo": "cardio",
+          "descanso": "Contínuo",
+          "descansoSegundos": 0,
+          "observacao": "Intensidade que permite conversar",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "30–40 min",
+              "series": 1,
+              "rir": "Leve/mod."
+            },
+            "fernanda": {
+              "texto": "DESCANSO",
+              "series": 0,
+              "rir": "—"
+            }
+          }
+        },
+        {
+          "id": "prancha-frontal",
+          "nome": "Prancha frontal",
+          "tipo": "core",
+          "descanso": "45–60 s",
+          "descansoSegundos": 60,
+          "observacao": "Não prender a respiração",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 20–40 s",
+              "series": 3,
+              "rir": "Técnica"
+            },
+            "fernanda": {
+              "texto": "DESCANSO",
+              "series": 0,
+              "rir": "—"
+            }
+          }
+        },
+        {
+          "id": "dead-bug",
+          "nome": "Dead bug",
+          "tipo": "core",
+          "descanso": "45–60 s",
+          "descansoSegundos": 60,
+          "observacao": "Movimento controlado",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 8–10/cada",
+              "series": 2,
+              "rir": "Técnica"
+            },
+            "fernanda": {
+              "texto": "DESCANSO",
+              "series": 0,
+              "rir": "—"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "quinta",
+      "dia": "Quinta-feira",
+      "abreviacao": "QUI",
+      "nome": "Pernas B · Posteriores + costas",
+      "foco": "Pernas B · Posteriores + costas",
+      "duracaoTexto": "60–85 min",
+      "imagem": "assets/covers/pull-card-v3.png",
+      "exercicios": [
+        {
+          "id": "stiff-com-halteres-ou-barra",
+          "nome": "Stiff com halteres ou barra",
+          "tipo": "forca",
+          "descanso": "2–3 min",
+          "descansoSegundos": 180,
+          "observacao": "Aprender dobradiça de quadril; manter coluna neutra",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 6–10",
+              "series": 3,
+              "rir": "2–3"
+            },
+            "fernanda": {
+              "texto": "2 × 8–12",
+              "series": 2,
+              "rir": "3–4"
+            }
+          }
+        },
+        {
+          "id": "mesa-flexora",
+          "nome": "Mesa flexora",
+          "tipo": "forca",
+          "descanso": "90 s",
+          "descansoSegundos": 90,
+          "observacao": "Sem roubar movimento",
+          "imagem": "assets/exercises/mesa-flexora.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 10–12",
+              "series": 3,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "elevacao-pelvica-hip-thrust",
+          "nome": "Elevação pélvica / hip thrust",
+          "tipo": "forca",
+          "descanso": "90–120 s",
+          "descansoSegundos": 120,
+          "observacao": "Controle da extensão do quadril",
+          "imagem": "assets/exercises/elevacao-pelvica.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 8–12",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "remada-articulada-com-apoio",
+          "nome": "Remada articulada com apoio",
+          "tipo": "forca",
+          "descanso": "90 s",
+          "descansoSegundos": 90,
+          "observacao": "Sem sobrecarregar lombar após stiff",
+          "imagem": "assets/exercises/remada-articulada.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 8–12",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "face-pull",
+          "nome": "Face pull",
+          "tipo": "forca",
+          "descanso": "60 s",
+          "descansoSegundos": 60,
+          "observacao": "Movimento leve e controlado",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "sexta",
+      "dia": "Sexta-feira",
+      "abreviacao": "SEX",
+      "nome": "Pernas C · Glúteos + push",
+      "foco": "Pernas C · Glúteos + push",
+      "duracaoTexto": "60–85 min",
+      "imagem": "assets/covers/completo-card-v3.png",
+      "exercicios": [
+        {
+          "id": "agachamento-bulgaro",
+          "nome": "Agachamento búlgaro",
+          "tipo": "forca",
+          "descanso": "90–120 s",
+          "descansoSegundos": 120,
+          "observacao": "Carga moderada; alternativa step-up",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 8–10/cada",
+              "series": 2,
+              "rir": "3"
+            },
+            "fernanda": {
+              "texto": "2 × 8/cada",
+              "series": 2,
+              "rir": "3–4"
+            }
+          }
+        },
+        {
+          "id": "cadeira-abdutora",
+          "nome": "Cadeira abdutora",
+          "tipo": "forca",
+          "descanso": "60–90 s",
+          "descansoSegundos": 90,
+          "observacao": "Prioridade em glúteo médio",
+          "imagem": "assets/exercises/abdutora.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 12–20",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 12–20",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "gluteo-no-cabo-ou-maquina",
+          "nome": "Glúteo no cabo ou máquina",
+          "tipo": "forca",
+          "descanso": "60 s",
+          "descansoSegundos": 60,
+          "observacao": "Sem compensar lombar",
+          "imagem": null,
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "supino-inclinado-maquina-ou-halteres",
+          "nome": "Supino inclinado máquina ou halteres",
+          "tipo": "forca",
+          "descanso": "90 s",
+          "descansoSegundos": 90,
+          "observacao": "Peito 2ª sessão da semana",
+          "imagem": "assets/exercises/supino-inclinado.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "3 × 8–12",
+              "series": 3,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 10–12",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "elevacao-lateral-ou-desenvolvimento-maquina",
+          "nome": "Elevação lateral ou desenvolvimento máquina",
+          "tipo": "forca",
+          "descanso": "60–90 s",
+          "descansoSegundos": 90,
+          "observacao": "Escolher opção com boa recuperação",
+          "imagem": "assets/exercises/elevacao-lateral.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 10–15",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        },
+        {
+          "id": "panturrilha-sentada",
+          "nome": "Panturrilha sentada",
+          "tipo": "forca",
+          "descanso": "60 s",
+          "descansoSegundos": 60,
+          "observacao": "Segunda sessão de panturrilha",
+          "imagem": "assets/exercises/panturrilha-sentada.webp",
+          "prescricao": {
+            "wanderson": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "2"
+            },
+            "fernanda": {
+              "texto": "2 × 12–15",
+              "series": 2,
+              "rir": "3"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "orientacoes": {
+    "Validade": "09/11/2026 até 31/12/2026; revisar em 30/11 após avaliação.",
+    "Proposta": "Três sessões de membros inferiores por semana para os dois, com duas sessões parciais de superiores.",
+    "Sessões consecutivas": "Quinta e sexta enfatizam músculos diferentes, com volume moderado. Se houver dor muscular intensa/fadiga, reduzir sexta ou transformar em recuperação.",
+    "RIR": "Repetições em reserva: RIR 2 significa terminar sabendo que faria mais duas repetições com boa técnica.",
+    "Carga": "Selecionar individualmente; aumentar carga cerca de 2–5% quando completar o topo das repetições mantendo a técnica e o RIR.",
+    "Aquecimento": "5–8 min de cardio leve + 2 séries progressivas nos primeiros exercícios do dia; séries de aquecimento não contam nas séries de trabalho.",
+    "Execução": "Sem histórico de limitação relatada não significa ausência de risco. Agachamento, stiff e passada entram de forma progressiva; se não dominarem a técnica, pedir supervisão presencial.",
+    "Controle de sessão": "Comum 60–85 min, varia conforme descanso e lotação. Alternar no mesmo equipamento quando conveniente.",
+    "Cardio Fernanda": "Terça e/ou sexta: 15–25 min moderados conforme recuperação. Adicionar caminhadas semanais e progredir gradualmente.",
+    "Cardio Wanderson": "Quarta 30–40 min moderados e opcional 15–20 min após terça; elevar volume só se recuperação permitir.",
+    "Falha": "Não necessária nas séries compostas; evitar falha com barra livre no início.",
+    "Alimentação": "Déficit energético moderado individualizado e proteínas adequadas são essenciais para perder gordura preservando músculos.",
+    "Reavaliação": "30/11/2026: peso, cintura, abdômen, quadril, fotos e bioimpedância sob condições semelhantes às iniciais.",
+    "Ajustes": "O volume de Fernanda parte da hipótese de treino iniciante/intermediário. Reavaliar carga, experiência, limitações clínicas e tolerância."
+  },
+  "baseline": {
+    "fernanda": {
+      "data": "18/10/2026",
+      "peso": 70.75,
+      "gordura": 39.8,
+      "massaMuscular": 40,
+      "cintura": 95,
+      "abdomen": 101,
+      "quadril": 111,
+      "visceral": 14
+    },
+    "wanderson": {}
+  }
+};

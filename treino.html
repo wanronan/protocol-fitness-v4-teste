@@ -4,30 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0A0D12">
-  <title>Treino • Protocol Fitness</title>
+  <title>Treino · Protocol Fitness V6</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260915-3">
+  <link rel="stylesheet" href="css/style.css?v=20261108-v6">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <a class="back-button" href="index.html" aria-label="Voltar">‹</a>
-      
       <a class="brand brand-compact" href="index.html" aria-label="Página inicial">
         <img class="brand-logo" src="assets/icons/protocol-fitness-logo.png" alt="Protocol Fitness">
-        <span><strong>PROTOCOL FITNESS</strong><small>TREINO E EVOLUÇÃO</small></span>
+        <span><strong>PROTOCOL FITNESS</strong><small>V6 · TREINO GUIADO</small></span>
       </a>
       <a class="icon-button" href="orientacoes.html" aria-label="Orientações">i</a>
     </header>
 
     <main class="page workout-page">
+      <div class="profile-switcher compact-switcher" id="profileSwitcher"></div>
       <section id="workoutHeader"></section>
 
-      <section class="workout-progress-card compact-progress">
+      <section class="workout-progress-card compact-progress" id="workoutProgress">
         <div class="progress-copy">
-          <div><strong id="progressLabel">0 de 0 exercícios</strong><span>marcados</span></div>
+          <div><strong id="progressLabel">0 de 0 exercícios</strong><span>concluídos</span></div>
           <strong id="progressPercent">0%</strong>
         </div>
         <div class="progress-track"><span id="progressBar"></span></div>
@@ -35,11 +35,23 @@
 
       <section class="simple-exercise-list" id="exerciseList"></section>
 
-      <button class="finish-button" id="finishWorkout">
-        Finalizar treino
-        <span>→</span>
-      </button>
+      <button class="finish-button" id="finishWorkout">Finalizar treino <span>→</span></button>
     </main>
+
+    <div class="timer-sheet" id="timerSheet" aria-live="polite">
+      <div class="timer-panel">
+        <div class="timer-grip"></div>
+        <span class="eyebrow">DESCANSO</span>
+        <strong class="timer-value" id="timerValue">01:30</strong>
+        <p id="timerExercise">Próxima série</p>
+        <div class="timer-actions">
+          <button class="secondary-button" id="timerMinus" type="button">−15 s</button>
+          <button class="secondary-button" id="timerReset" type="button">Reiniciar</button>
+          <button class="secondary-button" id="timerPlus" type="button">+15 s</button>
+        </div>
+        <button class="text-button timer-skip" id="timerSkip" type="button">Pular descanso</button>
+      </div>
+    </div>
 
     <nav class="bottom-nav" aria-label="Navegação principal">
       <a class="nav-item" href="index.html"><span>⌂</span><small>Início</small></a>
@@ -49,8 +61,9 @@
     </nav>
   </div>
 
-  <script src="js/treino-data.js?v=20260915-3"></script>
-  <script src="js/storage.js?v=20260915-3"></script>
-  <script src="js/treino.js?v=20260915-3"></script>
+  <script src="js/treino-data.js?v=20261108-v6"></script>
+  <script src="js/storage.js?v=20261108-v6"></script>
+  <script src="js/profile.js?v=20261108-v6"></script>
+  <script src="js/treino.js?v=20261108-v6"></script>
 </body>
 </html>

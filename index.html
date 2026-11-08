@@ -4,18 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0A0D12">
-  <meta name="description" content="Treino de ganho de volume com prioridade em pernas.">
-  <title>Protocol Fitness</title>
-  <link rel="manifest" href="manifest.json?v=20260915-3">
+  <meta name="description" content="Protocol Fitness V6 · treino conjunto Wanderson e Fernanda.">
+  <title>Protocol Fitness V6</title>
+  <link rel="manifest" href="manifest.json?v=20261108-v6">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260915-3">
+  <link rel="stylesheet" href="css/style.css?v=20261108-v6">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      
       <a class="brand" href="index.html" aria-label="Página inicial">
         <img class="brand-logo" src="assets/icons/protocol-fitness-logo.png" alt="Protocol Fitness">
         <span><strong>PROTOCOL FITNESS</strong><small>TREINO E EVOLUÇÃO</small></span>
@@ -24,11 +23,14 @@
     </header>
 
     <main class="page home-page">
+      <div class="profile-switcher" id="profileSwitcher"></div>
+
       <section class="hero">
         <div class="hero-copy">
-          <span class="eyebrow">PROGRAMA ATUAL</span>
-          <h1>Protocol Fitness <span>Treino.</span></h1>
-          <p>5 sessões de musculação por semana, cardio no domingo e progressão de carga com execução controlada.</p>
+          <span class="eyebrow">PROGRAMA ATUAL · <span id="profileNameHero"></span></span>
+          <h1>Protocol Fitness <span>V6.</span></h1>
+          <p>Treino revisado para dezembro, com progressão simples, RIR guiado e registro rápido no celular.</p>
+          <small class="program-validity" id="programValidity"></small>
         </div>
         <div class="hero-stat">
           <strong id="weekPercent">0%</strong>
@@ -38,10 +40,7 @@
 
       <section class="section-block" aria-labelledby="todayTitle">
         <div class="section-heading">
-          <div>
-            <span class="eyebrow">SESSÃO DO DIA</span>
-            <h2 id="todayTitle">Treino de hoje</h2>
-          </div>
+          <div><span class="eyebrow">SESSÃO DO DIA</span><h2 id="todayTitle">Treino de hoje</h2></div>
           <span class="date-pill" id="todayDate"></span>
         </div>
         <div id="todayWorkout"></div>
@@ -49,10 +48,7 @@
 
       <section class="section-block" aria-labelledby="weekTitle">
         <div class="section-heading">
-          <div>
-            <span class="eyebrow">PLANEJAMENTO</span>
-            <h2 id="weekTitle">Sua semana</h2>
-          </div>
+          <div><span class="eyebrow">PLANEJAMENTO</span><h2 id="weekTitle">Sua semana</h2></div>
           <a class="text-link" href="orientacoes.html">Regras</a>
         </div>
         <div class="week-grid" id="weekGrid"></div>
@@ -62,8 +58,8 @@
         <div class="insight-icon">↗</div>
         <div>
           <span class="eyebrow">PROGRESSÃO</span>
-          <h3>Primeiro técnica, depois carga.</h3>
-          <p>Fez toda a faixa de repetições com execução boa? Aí sim sobe o peso na próxima sessão.</p>
+          <h3>Fez bem? Aí sobe.</h3>
+          <p>Complete o topo das repetições mantendo técnica e RIR. Depois aumente a carga em torno de 2–5%, conforme a planilha.</p>
         </div>
       </section>
     </main>
@@ -76,8 +72,9 @@
     </nav>
   </div>
 
-  <script src="js/treino-data.js?v=20260915-3"></script>
-  <script src="js/storage.js?v=20260915-3"></script>
-  <script src="js/app.js?v=20260915-3"></script>
+  <script src="js/treino-data.js?v=20261108-v6"></script>
+  <script src="js/storage.js?v=20261108-v6"></script>
+  <script src="js/profile.js?v=20261108-v6"></script>
+  <script src="js/app.js?v=20261108-v6"></script>
 </body>
 </html>

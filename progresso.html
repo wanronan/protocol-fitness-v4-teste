@@ -4,40 +4,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0A0D12">
-  <title>Evolução • Protocol Fitness</title>
+  <title>Evolução · Protocol Fitness V6</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260915-3">
+  <link rel="stylesheet" href="css/style.css?v=20261108-v6">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <a class="back-button" href="index.html" aria-label="Voltar">‹</a>
-      <div class="page-brand">PROTOCOL FITNESS</div>
-      <button class="icon-button" id="resetData" aria-label="Limpar dados">↻</button>
+      <div class="page-brand">PROTOCOL FITNESS V6</div>
+      <button class="icon-button" id="resetData" aria-label="Limpar dados deste perfil">↻</button>
     </header>
 
     <main class="page progress-page">
+      <div class="profile-switcher compact-switcher" id="profileSwitcher"></div>
       <section class="progress-hero">
-        <span class="eyebrow">CONSISTÊNCIA</span>
+        <span class="eyebrow">EVOLUÇÃO · <span id="progressProfileName"></span></span>
         <h1>O que é medido, <span>evolui.</span></h1>
-        <p>As séries concluídas e as cargas ficam salvas neste navegador.</p>
+        <p>Cargas, séries, sessões e avaliações ficam separadas por perfil neste aparelho.</p>
       </section>
 
       <section class="metric-grid" id="metricGrid"></section>
 
       <section class="section-block">
-        <div class="section-heading">
-          <div><span class="eyebrow">SEMANA ATUAL</span><h2>Conclusão por treino</h2></div>
-        </div>
+        <div class="section-heading"><div><span class="eyebrow">SEMANA ATUAL</span><h2>Conclusão por treino</h2></div></div>
         <div class="chart-card" id="weekChart"></div>
       </section>
 
       <section class="section-block">
-        <div class="section-heading">
-          <div><span class="eyebrow">HISTÓRICO</span><h2>Últimas sessões</h2></div>
-        </div>
+        <div class="section-heading"><div><span class="eyebrow">CORPO</span><h2>Evolução corporal</h2></div></div>
+        <div class="body-metric-grid" id="bodyMetrics"></div>
+        <details class="measure-details">
+          <summary>＋ Registrar nova avaliação</summary>
+          <form class="measure-form" id="measureForm">
+            <label>Data<input type="date" name="date" id="measureDate"></label>
+            <label>Peso<input inputmode="decimal" type="number" step="0.01" name="peso" placeholder="kg"></label>
+            <label>Gordura<input inputmode="decimal" type="number" step="0.1" name="gordura" placeholder="%"></label>
+            <label>Massa muscular<input inputmode="decimal" type="number" step="0.1" name="massaMuscular" placeholder="kg"></label>
+            <label>Cintura<input inputmode="decimal" type="number" step="0.1" name="cintura" placeholder="cm"></label>
+            <label>Abdômen<input inputmode="decimal" type="number" step="0.1" name="abdomen" placeholder="cm"></label>
+            <label>Quadril<input inputmode="decimal" type="number" step="0.1" name="quadril" placeholder="cm"></label>
+            <label>Gordura visceral<input inputmode="decimal" type="number" step="0.1" name="visceral" placeholder="índice"></label>
+            <button class="primary-button measure-save" type="submit">Salvar avaliação</button>
+          </form>
+        </details>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading"><div><span class="eyebrow">HISTÓRICO</span><h2>Últimas sessões</h2></div></div>
         <div class="history-list" id="historyList"></div>
       </section>
     </main>
@@ -45,13 +61,14 @@
     <nav class="bottom-nav" aria-label="Navegação principal">
       <a class="nav-item" href="index.html"><span>⌂</span><small>Início</small></a>
       <a class="nav-item" href="index.html#weekTitle"><span>▦</span><small>Treinos</small></a>
-      <a class="nav-item active" href="progresso.html"><span>↗</span><small>Progresso</small></a>
-      <a class="nav-item" href="orientacoes.html"><span>◎</span><small>Orientações</small></a>
+      <a class="nav-item active" href="progresso.html"><span>↗</span><small>Evolução</small></a>
+      <a class="nav-item" href="orientacoes.html"><span>◎</span><small>Regras</small></a>
     </nav>
   </div>
 
-  <script src="js/treino-data.js?v=20260915-3"></script>
-  <script src="js/storage.js?v=20260915-3"></script>
-  <script src="js/progresso.js?v=20260915-3"></script>
+  <script src="js/treino-data.js?v=20261108-v6"></script>
+  <script src="js/storage.js?v=20261108-v6"></script>
+  <script src="js/profile.js?v=20261108-v6"></script>
+  <script src="js/progresso.js?v=20261108-v6"></script>
 </body>
 </html>

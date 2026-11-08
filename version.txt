@@ -1,3 +1,6 @@
-Protocol Fitness V4 Premium - imagens completas
-Cache: protocol-fitness-v4-premium-exercicios-v3
-Build: 2026-09-15
+Protocol Fitness V6 · Wanderson + Fernanda
+Treino-base: Fitness_WP_Wanderson_Fernanda_Treino_Revisado_Dez2026
+Validade do plano: 09/11/2026 a 31/12/2026
+Revisão prevista: 30/11/2026
+Build: 2026-11-08
+Cache: protocol-fitness-v6-20261108
